@@ -1,0 +1,777 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/*  tailwindcss */
+@import "tailwindcss";
+/*  flowbite */
+@import "flowbite/src/themes/default";
+/*  flowbite plugin */
+@plugin "flowbite/plugin";
+/* flowbite source  */
+@source "../node_modules/flowbite";
+
+:root {
+  /* ======================================================================
+                        color area start
+========================================================================= */
+
+  /* gray shades */
+  --gray_00: #ffffff;
+  --gray_50: #f2f4f5;
+  --gray_100: #e4e7e9;
+  --gray_200: #c9cfd2;
+  --gray_300: #adb7bc;
+  --gray_400: #929fa5;
+  --gray_500: #77878f;
+  --gray_600: #5f6c72;
+  --gray_700: #475156;
+  --gray_800: #303639;
+  --gray_900: #191c1f;
+
+  /* primary shades */
+  --primary_50: #fff3eb;
+  --primary_100: #ffe7d6;
+  --primary_200: #ffcead;
+  --primary_300: #ffb685;
+  --primary_400: #ff9d5c;
+  --primary_500: #fa8232;
+  --primary_600: #de732d;
+  --primary_700: #99501f;
+  --primary_800: #663514;
+  --primary_900: #331b0a;
+
+  /* secondary shades */
+  --secondary_50: #eaf6fe;
+  --secondary_100: #d5edfd;
+  --secondary_200: #abdbfa;
+  --secondary_300: #81c9f8;
+  --secondary_400: #57b7f5;
+  --secondary_500: #2da5f3;
+  --secondary_600: #2484c2;
+  --secondary_700: #1b6392;
+  --secondary_800: #124261;
+  --secondary_900: #092131;
+
+  /* success shades */
+  --success_50: #eaf7e9;
+  --success_100: #d5f0d3;
+  --success_200: #abe0a7;
+  --success_300: #81d17c;
+  --success_400: #57c150;
+  --success_500: #2db224;
+  --success_600: #248e1d;
+  --success_700: #1b6b16;
+  --success_800: #12470e;
+  --success_900: #092407;
+
+  /* warning shades */
+  --warning_50: #fdfae7;
+  --warning_100: #fbf4ce;
+  --warning_200: #f7e99e;
+  --warning_300: #f3de6d;
+  --warning_400: #efd33d;
+  --warning_500: #ebc80c;
+  --warning_600: #bca00a;
+  --warning_700: #8d7807;
+  --warning_800: #5e5005;
+  --warning_900: #2f2802;
+
+  /* danger shades */
+  --danger_50: #fdeeee;
+  --danger_100: #fcdede;
+  --danger_200: #f8bcbc;
+  --danger_300: #f59b9b;
+  --danger_400: #f17979;
+  --danger_500: #ee5858;
+  --danger_600: #be4646;
+  --danger_700: #8f3535;
+  --danger_800: #5f2323;
+  --danger_900: #301212;
+
+  /* ======================================================================
+                        color area end
+========================================================================= */
+  /* font family */
+  --font_family: "Public Sans", sans-serif;
+}
+
+@theme {
+  /* color palette */
+
+  /* gray shades */
+  --color-gray_00: var(--gray_00);
+  --color-gray_50: var(--gray_50);
+  --color-gray_100: var(--gray_100);
+  --color-gray_200: var(--gray_200);
+  --color-gray_300: var(--gray_300);
+  --color-gray_400: var(--gray_400);
+  --color-gray_500: var(--gray_500);
+  --color-gray_600: var(--gray_600);
+  --color-gray_700: var(--gray_700);
+  --color-gray_800: var(--gray_800);
+  --color-gray_900: var(--gray_900);
+
+  /* primary shades */
+  --color-primary_50: var(--primary_50);
+  --color-primary_100: var(--primary_100);
+  --color-primary_200: var(--primary_200);
+  --color-primary_300: var(--primary_300);
+  --color-primary_400: var(--primary_400);
+  --color-primary_500: var(--primary_500);
+  --color-primary_600: var(--primary_600);
+  --color-primary_700: var(--primary_700);
+  --color-primary_800: var(--primary_800);
+  --color-primary_900: var(--primary_900);
+
+  /* secondary shades */
+  --color-secondary_50: var(--secondary_50);
+  --color-secondary_100: var(--secondary_100);
+  --color-secondary_200: var(--secondary_200);
+  --color-secondary_300: var(--secondary_300);
+  --color-secondary_400: var(--secondary_400);
+  --color-secondary_500: var(--secondary_500);
+  --color-secondary_600: var(--secondary_600);
+  --color-secondary_700: var(--secondary_700);
+  --color-secondary_800: var(--secondary_800);
+  --color-secondary_900: var(--secondary_900);
+
+  /* success shades */
+  --color-success_50: var(--success_50);
+  --color-success_100: var(--success_100);
+  --color-success_200: var(--success_200);
+  --color-success_300: var(--success_300);
+  --color-success_400: var(--success_400);
+  --color-success_500: var(--success_500);
+  --color-success_600: var(--success_600);
+  --color-success_700: var(--success_700);
+  --color-success_800: var(--success_800);
+  --color-success_900: var(--success_900);
+
+  /* warning shades */
+  --color-warning_50: var(--warning_50);
+  --color-warning_100: var(--warning_100);
+  --color-warning_200: var(--warning_200);
+  --color-warning_300: var(--warning_300);
+  --color-warning_400: var(--warning_400);
+  --color-warning_500: var(--warning_500);
+  --color-warning_600: var(--warning_600);
+  --color-warning_700: var(--warning_700);
+  --color-warning_800: var(--warning_800);
+  --color-warning_900: var(--warning_900);
+
+  /* danger shades */
+  --color-danger_50: var(--danger_50);
+  --color-danger_100: var(--danger_100);
+  --color-danger_200: var(--danger_200);
+  --color-danger_300: var(--danger_300);
+  --color-danger_400: var(--danger_400);
+  --color-danger_500: var(--danger_500);
+  --color-danger_600: var(--danger_600);
+  --color-danger_700: var(--danger_700);
+  --color-danger_800: var(--danger_800);
+  --color-danger_900: var(--danger_900);
+}
+
+/* font family theme */
+
+@theme {
+  --font-publicSans: var(--font_family);
+}
+/* for pagination styles with coustom theme */
+
+@theme {
+  --text-pagination_bullet_size: var(--swiper-pagination-bullet-size);
+}
+
+/* ======================================================================
+                        Typography Styles area start
+========================================================================= */
+
+/* for body  */
+
+/* xxl */
+.xxl_400 {
+  @apply font-normal text-2xl/[32px] font-publicSans;
+}
+/* xl */
+.xl_400 {
+  @apply font-normal text-xl/[28px] font-publicSans;
+}
+.xl_500 {
+  @apply font-medium text-xl/[28px] font-publicSans;
+}
+.xl_600 {
+  @apply font-semibold  text-xl/[28px] font-publicSans;
+}
+
+/* lg */
+.lg_400 {
+  @apply font-normal text-lg/[24px] font-publicSans;
+}
+.lg_500 {
+  @apply font-medium text-lg/[24px] font-publicSans;
+}
+.lg_600 {
+  @apply font-semibold text-lg/[24px] font-publicSans;
+}
+
+/* md */
+
+.md_400 {
+  @apply font-normal text-base/[24px] font-publicSans;
+}
+.md_500 {
+  @apply font-medium text-base/[24px] font-publicSans;
+}
+.md_600 {
+  @apply font-semibold text-base/[24px] font-publicSans;
+}
+
+/* sm */
+.sm_400 {
+  @apply font-normal text-sm/[20px] font-publicSans;
+}
+.sm_500 {
+  @apply font-medium text-sm/[20px] font-publicSans;
+}
+.sm_600 {
+  @apply font-semibold text-sm/[20px] font-publicSans;
+}
+
+/* tiny */
+.tiny_400 {
+  @apply font-normal text-xs/[16px] font-publicSans;
+}
+.tiny_500 {
+  @apply font-medium text-xs/[16px] font-publicSans;
+}
+.tiny_600 {
+  @apply font-semibold text-xs/[16px] font-publicSans;
+}
+
+/* xs */
+
+.xs_400 {
+  @apply font-normal text-[11px]/[12px] font-publicSans;
+}
+.xs_500 {
+  @apply font-medium text-[11px]/[12px] font-publicSans;
+}
+.xs_600 {
+  @apply font-semibold text-[11px]/[12px] font-publicSans;
+}
+
+/* for display */
+
+/* d1 */
+.display1 {
+  @apply font-publicSans font-semibold text-[64px]/[72px];
+}
+/* d2 */
+.display2 {
+  @apply font-publicSans font-semibold text-[56px]/[64px];
+}
+
+/* d3 */
+.display3 {
+  @apply font-publicSans font-semibold text-[48px]/[56px];
+}
+/* d4 */
+.display4 {
+  @apply font-publicSans font-semibold text-[40px]/[48px];
+}
+
+/* d5 */
+.display5 {
+  @apply font-publicSans font-semibold text-[36px]/[44px];
+}
+
+/* heading styles */
+
+/* heading 1 */
+.heading1 {
+  @apply font-publicSans font-semibold text-[32px]/[40px];
+}
+/* heading 2 */
+.heading2 {
+  @apply font-publicSans font-semibold text-[28px]/[36px];
+}
+/* heading 3 */
+.heading3 {
+  @apply font-publicSans font-semibold text-[24px]/[32px];
+}
+
+/* heading 6 */
+.heading6 {
+  @apply font-publicSans font-bold text-[16px]/[56px] tracking-[1.2%];
+}
+
+/* heading 7 */
+.heading7 {
+  @apply font-publicSans font-bold text-[14px]/[48px] tracking-[1.2%];
+}
+
+/* label styles  */
+
+/* label 1 */
+.label1 {
+  @apply font-publicSans font-medium text-lg/[28px];
+}
+
+/* label 2 */
+.label2 {
+  @apply font-publicSans font-medium text-base/[24px];
+}
+/* lebel 3 */
+.label3 {
+  @apply font-publicSans font-medium text-sm/[20px];
+}
+/* label  4*/
+.label4 {
+  @apply font-publicSans font-medium text-xs/[150%];
+}
+/* label 5 */
+.label5 {
+  @apply font-publicSans font-medium text-[11px]/[16px];
+}
+
+/* ======================================================================
+                        Typography Styles area end
+========================================================================= */
+
+/*  for radio button */
+
+[type="radio"] {
+  appearance: none;
+  padding: 0;
+  print-color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  user-select: none;
+  flex-shrink: 0;
+  height: 1.4rem; /*changed*/
+  width: 1.4rem; /*changed*/
+  color: var(--primary_500); /*changed*/
+  background-color: #fff;
+  border-color: --color-gray-500;
+  border-width: 1px;
+  --tw-shadow: 0 0 #0000;
+}
+
+[type="checkbox"]:focus,
+[type="radio"]:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: none; /*changed*/
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+
+[type="radio"]:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+  background-size: 2.5em 2.5em; /*changed*/
+}
+
+[type="checkbox"]:checked {
+  background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 12'%3e %3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M1 5.917 5.724 10.5 15 1.5'/%3e %3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 0.88em 0.88em; /*changed*/
+  print-color-adjust: exact;
+}
+[type="checkbox"]:hover {
+  border-color: var(--primary_500);
+}
+[type="checkbox"] {
+  appearance: none;
+  padding: 0;
+  print-color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  user-select: none;
+  flex-shrink: 0;
+  height: 1.5rem; /*changed*/
+  width: 1.5rem; /*changed*/
+  color: var(--primary_500); /*changed*/
+  background-color: #fff;
+  border-color: var(--gray_200);
+  border-width: 3px;
+  --tw-shadow: 0 0 #0000;
+}
+
+/* for right side input slider */
+
+[type="text"],
+&:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: none; /*changed*/
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+    var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  border-color: var(--color-blue-600);
+}
+
+/*  change for  small widget css */
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--warning_500);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--warning_500);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * var(--progress));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+[type="email"] {
+  &:focus {
+    --tw-ring-color: var(--gray_100);
+  }
+}
+
+/* for scrollbar */
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* LoadingSpinner.css */
+@keyframes orbitA {
+  from {
+    transform: rotate(0deg) translateX(28px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(28px) rotate(-360deg);
+  }
+}
+@keyframes orbitB {
+  from {
+    transform: rotate(120deg) translateX(28px) rotate(-120deg);
+  }
+  to {
+    transform: rotate(480deg) translateX(28px) rotate(-480deg);
+  }
+}
+@keyframes orbitC {
+  from {
+    transform: rotate(240deg) translateX(28px) rotate(-240deg);
+  }
+  to {
+    transform: rotate(600deg) translateX(28px) rotate(-600deg);
+  }
+}
+@keyframes corePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.7;
+  }
+}
+@keyframes ringRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes fadeUp {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 36px;
+}
+.spinner-scene {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ring {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  animation: ringRotate 8s linear infinite;
+}
+.ring::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 30%;
+  width: 40%;
+  height: 2px;
+  border-radius: 2px;
+  background: #111827;
+}
+.dot-orbit {
+  position: absolute;
+  border-radius: 50%;
+  background: #111827;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+  animation-duration: 1.6s;
+}
+.dot-orbit.a {
+  width: 8px;
+  height: 8px;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+  animation-name: orbitA;
+  opacity: 1;
+}
+.dot-orbit.b {
+  width: 6px;
+  height: 6px;
+  top: calc(50% - 3px);
+  left: calc(50% - 3px);
+  animation-name: orbitB;
+  opacity: 0.55;
+}
+.dot-orbit.c {
+  width: 5px;
+  height: 5px;
+  top: calc(50% - 2.5px);
+  left: calc(50% - 2.5px);
+  animation-name: orbitC;
+  opacity: 0.25;
+}
+.core {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #111827;
+  animation: corePulse 1.6s ease-in-out infinite;
+  z-index: 2;
+}
+.label-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.label-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.bar-row {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+.bar {
+  width: 3px;
+  border-radius: 2px;
+  background: #111827;
+  animation: fadeUp 1.2s ease-in-out infinite;
+}
+.bar:nth-child(1) {
+  height: 10px;
+}
+.bar:nth-child(2) {
+  height: 16px;
+}
+.bar:nth-child(3) {
+  height: 22px;
+}
+.bar:nth-child(4) {
+  height: 16px;
+}
+.bar:nth-child(5) {
+  height: 10px;
+}
+
+/*  for page not found */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes drift {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateX(6px) translateY(-8px) rotate(8deg);
+  }
+  66% {
+    transform: translateX(-5px) translateY(4px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+}
+
+/* ======================================================================
+   Global Responsive Fixes — Added for full mobile responsiveness
+   Prevents horizontal scroll at all viewports from 320px to desktop
+========================================================================= */
+
+/* Prevent horizontal overflow globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Scrollbar hide utility — used in feature product nav */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Swiper: prevent overflow at all sizes */
+.swiper {
+  width: 100%;
+}
+
+/* Ensure images never cause overflow */
+img {
+  max-width: 100%;
+}
+
+/* Mobile-first touch target minimum */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Price range slider — ensure no overflow */
+.price-slider-container {
+  overflow: hidden;
+}
+
+/* Truncate long text in tight spaces */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ======================================================================
+   RESPONSIVE TYPOGRAPHY OVERRIDES
+   heading1 (32px) -> 20px on mobile, scales up to 32px on lg+
+   heading2 (28px) -> 18px on mobile
+   heading3 (24px) -> 16px on mobile
+   These fix the overflow issue on 320px screens where large headings
+   push content horizontally.
+========================================================================= */
+
+@media (max-width: 639px) {
+  .heading1 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .heading2 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .heading3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .heading6 {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .heading1 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .heading2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .heading3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+/* Prevent ALL horizontal overflow globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
