@@ -170,15 +170,13 @@
   --color-danger_900: var(--danger_900);
 }
 
-/* font family theme */
-
 @theme {
+  /* font family theme */
   --font-publicSans: var(--font_family);
-}
-/* for pagination styles with coustom theme */
-
-@theme {
+  /* for pagination styles with coustom theme */
   --text-pagination_bullet_size: var(--swiper-pagination-bullet-size);
+  /* for coustom break point */
+  --breakpoint-underXs: 450px;
 }
 
 /* ======================================================================
@@ -677,7 +675,8 @@
 ========================================================================= */
 
 /* Prevent horizontal overflow globally */
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100vw;
 }
@@ -702,7 +701,8 @@ img {
 }
 
 /* Mobile-first touch target minimum */
-button, a {
+button,
+a {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -762,7 +762,8 @@ button, a {
 }
 
 /* Prevent ALL horizontal overflow globally */
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100vw;
 }

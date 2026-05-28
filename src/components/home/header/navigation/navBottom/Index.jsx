@@ -280,7 +280,7 @@ const NavBottom = () => {
                   id="category-panel"
                   role="menu"
                   aria-label="Product categories"
-                  className="absolute top-full left-0 bg-gray_00 z-50 w-[220px] sm:w-[245px] shadow-xl rounded-sm overflow-hidden mt-1"
+                  className="absolute   top-full left-0 bg-gray_00 z-50 w-[150px] underXs:w-[220px] sm:w-[245px] shadow-xl rounded-sm overflow-hidden mt-1"
                 >
                   <div
                     ref={categoryRef}
@@ -311,7 +311,7 @@ const NavBottom = () => {
                               transform: `translateY(${virtualItem.start}px)`,
                             }}
                             className={[
-                              "py-2 px-4 flex justify-between items-center",
+                              "py-2 px-2 underXs:px-4 flex justify-between items-center",
                               "hover:bg-gray_50 transition duration-300 ease-in-out",
                               "sm_400 text-gray_600 hover:text-gray_900 cursor-pointer",
                               "focus-visible:outline-none focus-visible:bg-gray_50",
@@ -353,7 +353,7 @@ const NavBottom = () => {
                 <div
                   role="menu"
                   aria-label="Sub-category items"
-                  className="absolute top-full left-[220px] sm:left-[245px] bg-gray_00 z-60 w-[180px] sm:w-[200px] shadow-xl rounded-sm overflow-hidden mt-1"
+                  className="absolute top-full left-[152px] underXs:left-[220px] sm:left-[245px] bg-gray_00 z-60  w-[140px] underXs:w-[180px] sm:w-[200px] shadow-xl rounded-sm overflow-hidden mt-1"
                 >
                   <div
                     ref={subCategoryRef}
@@ -383,7 +383,7 @@ const NavBottom = () => {
                               height: `${virtualItem.size}px`,
                               transform: `translateY(${virtualItem.start}px)`,
                             }}
-                            className="px-4 flex items-center text-gray_600 hover:text-gray_900 hover:bg-gray_50 cursor-pointer transition duration-300 ease-in-out sm_400 focus-visible:outline-none focus-visible:bg-gray_50"
+                            className=" px-2 underXs:px-4 flex items-center text-gray_600 hover:text-gray_900 hover:bg-gray_50 cursor-pointer transition duration-300 ease-in-out sm_400 focus-visible:outline-none focus-visible:bg-gray_50"
                             onClick={() => handleSubNestChild(brandItem)}
                             onKeyDown={(e) => {
                               if (e.key === "Enter" || e.key === " ") {
