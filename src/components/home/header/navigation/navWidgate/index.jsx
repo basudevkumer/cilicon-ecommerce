@@ -66,7 +66,7 @@ const NavWidget = () => {
             grid-cols-1
             sm:grid-cols-3
             items-center
-            gap-y-2
+            gap-y-3
             gap-x-4
           "
         >
@@ -106,7 +106,7 @@ const NavWidget = () => {
               "
               width="120"
               height="36"
-              loading="eager"   /* Logo above fold — eager-load for LCP */
+              loading="eager" /* Logo above fold — eager-load for LCP */
               decoding="async"
             />
           </figure>
@@ -174,7 +174,7 @@ const NavWidget = () => {
                   font-bold
                   leading-none
                 "
-                aria-hidden="true"  /* aria-label on parent already covers this */
+                aria-hidden="true" /* aria-label on parent already covers this */
               >
                 59%
               </span>
@@ -204,14 +204,7 @@ const NavWidget = () => {
               sm:justify-end
             "
           >
-            <Button
-              aria-label="Shop now — browse the sale"
-              className="
-                w-full
-                sm:w-auto
-                min-w-[100px]
-              "
-            >
+            <Button aria-label="Shop now — browse the sale" className="!w-fit">
               Shop now
             </Button>
           </div>
