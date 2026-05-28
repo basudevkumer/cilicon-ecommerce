@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -49,11 +48,15 @@ const Index = () => {
         <div className="relative px-6 sm:px-8">
           {/* Prev Button */}
           <button className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 h-9 w-9 sm:h-11 sm:w-11 lg:h-[48px] lg:w-[48px] border border-primary_500 rounded-full flex justify-center items-center bg-primary_500 z-10 cursor-pointer shadow-md">
-            <span className="text-base sm:text-xl text-gray_00">{arrowIcon[0].icon}</span>
+            <span className="text-base sm:text-xl text-gray_00">
+              {arrowIcon[0].icon}
+            </span>
           </button>
           {/* Next Button */}
           <button className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 h-9 w-9 sm:h-11 sm:w-11 lg:h-[48px] lg:w-[48px] border border-primary_500 rounded-full flex justify-center items-center bg-primary_500 z-10 cursor-pointer shadow-md">
-            <span className="text-base sm:text-xl text-gray_00">{arrowIcon[1].icon}</span>
+            <span className="text-base sm:text-xl text-gray_00">
+              {arrowIcon[1].icon}
+            </span>
           </button>
 
           <Swiper
@@ -74,18 +77,20 @@ const Index = () => {
             }}
           >
             {data.map((items, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} className="pt-1 pb-4">
                 <Link to={`/product-details/${items?.id}`}>
-                  <div className="shadow-xl border border-gray_100 w-full flex flex-col items-center gap-y-3 px-3 py-4 sm:px-5 sm:py-5 lg:px-[28px] lg:py-[24px] rounded-md h-[180px] sm:h-[210px] lg:h-[270px] hover:-translate-y-1 transition duration-300">
+                  <div className=" shadow-md border border-gray_100 w-full flex flex-col items-center gap-y-3 px-3 py-4 sm:px-5 sm:py-5 lg:px-[28px] lg:py-[24px] rounded-md h-[150px] sm:h-[180px] lg:h-[220px] hover:-translate-y-1 transition duration-300">
                     <picture className="flex justify-center">
                       <img
                         src={items.thumbnail}
                         alt={items.title}
-                        className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover rounded-full"
+                        className="w-18 h-18 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover rounded-full"
                         loading="lazy"
                       />
                     </picture>
-                    <p className="text-[11px] sm:text-sm lg:text-base font-medium text-center line-clamp-2">{items.title}</p>
+                    <p className="text-[11px] sm:text-sm lg:text-base font-medium text-center line-clamp-2">
+                      {items.title}
+                    </p>
                   </div>
                 </Link>
               </SwiperSlide>
