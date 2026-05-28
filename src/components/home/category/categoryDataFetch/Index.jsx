@@ -79,7 +79,7 @@ const Index = () => {
             {data.map((items, index) => (
               <SwiperSlide key={index} className="pt-1 pb-4">
                 <Link to={`/product-details/${items?.id}`}>
-                  <div className=" shadow-md border border-gray_100 w-full flex flex-col items-center gap-y-3 px-3 py-4 sm:px-5 sm:py-5 lg:px-[28px] lg:py-[24px] rounded-md h-[150px] sm:h-[180px] lg:h-[220px] hover:-translate-y-1 transition duration-300">
+                  <div className=" sm:shadow-md border border-gray_100 w-full flex flex-col items-center gap-y-3 px-3 py-4 sm:px-5 sm:py-5 lg:px-[28px] lg:py-[24px] rounded-md h-[150px] sm:h-[180px] lg:h-[220px] hover:-translate-y-1 transition duration-300">
                     <picture className="flex justify-center">
                       <img
                         src={items.thumbnail}
