@@ -87,12 +87,12 @@ const FeatureProduct = () => {
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray_900">Featured Products</h3>
 
               {/* Filter nav — scrollable on mobile */}
-              <div className="flex items-center gap-x-2 sm:gap-x-3 overflow-x-auto pb-1 sm:pb-0 scrollbar-hide">
+              <div className="flex items-center flex-wrap   gap-x-2 sm:gap-x-3 overflow-x-auto pb-1 sm:pb-0 scrollbar-hide">
                 {featureNavText.map((items) => {
                   const isBrowse = items.text === "Browse All";
                   return (
                     <button
-                      className={`text-xs sm:text-sm whitespace-nowrap cursor-pointer duration-300 relative shrink-0
+                      className={`text-xs sm:text-sm whitespace-nowrap cursor-pointer duration-300 relative shrink-0 mb-2
                         ${isBrowse
                           ? "text-primary_500 flex items-center gap-x-1 after:absolute after:content-[''] after:w-0 hover:after:w-full after:h-[2px] after:bg-gray_900 after:bottom-[-6px] after:left-0 after:duration-300"
                           : "text-gray_600 hover:text-gray_900 after:absolute after:content-[''] after:w-0 hover:after:w-full after:h-[2px] after:bg-primary_500 after:bottom-[-6px] after:left-0 after:duration-300"
