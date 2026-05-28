@@ -59,7 +59,7 @@ const SmallWidget = ({ images = [], label = "Promotional widget carousel" }) => 
      */
     <div
       className="
-        w-full max-w-[424px] min-w-0
+        w-full 
         aspect-[16/9]
         lg:aspect-auto lg:h-full
         overflow-hidden rounded-[6px]
