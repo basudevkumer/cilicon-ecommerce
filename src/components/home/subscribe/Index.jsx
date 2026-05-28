@@ -30,7 +30,7 @@ const Subscribe = () => {
             />
             <Button
               children={"Subscribe"}
-              className={"!bg-primary_500 !text-gray_00 shrink-0"}
+              className={"!bg-primary_500 !text-gray_00 shrink-0 justify-center lg:justify-start md:w-fit"}
             />
           </div>
 
