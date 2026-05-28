@@ -44,7 +44,7 @@ const MoreDetails = ({ productInfo }) => {
 
   return (
     <div className="border border-gray_100  rounded">
-      <div className="flex justify-center gap-x-4 sm:gap-x-8 lg:gap-x-10 py-3 sm:py-[18px] px-3 sm:px-5 border-b border-gray_100 overflow-x-auto ">
+      <div className="flex flex-wrap  justify-center gap-4 sm:gap-x-8 lg:gap-x-10 py-3 sm:py-[18px] px-3 sm:px-5 border-b border-gray_100 overflow-x-auto ">
         {tabs.map((items, index) => {
           return (
             <button
@@ -56,7 +56,7 @@ const MoreDetails = ({ productInfo }) => {
               {items.label}
 
               {items.id === activeTab && (
-                <span className="absolute left-[-5px] top-[37px] w-[115%] h-[3px] bg-primary_500 "></span>
+                <span className="absolute left-[-5px] top-[37px] w-[115%] h-[3px] bg-primary_500 hidden sm:block"></span>
               )}
             </button>
           );
@@ -64,7 +64,7 @@ const MoreDetails = ({ productInfo }) => {
       </div>
       {activeTab === "description" && (
         <div className="p-4 sm:p-6 lg:p-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-6">
             <div className="col-span-2 ">
               <p className="md_600 text-gray_900 ">Description</p>
               <p className="py-3 sm_400 text-gray_600">
@@ -84,7 +84,7 @@ const MoreDetails = ({ productInfo }) => {
                 HEVC, and ProRes codecs.
               </p>
             </div>
-            <div className="col-span-1 ">
+            <div className=" col-span-2 sm:col-span-1 ">
               <p className="md_600 text-gray_900 mb-4">Shipping Information</p>
               {productFeatures.map((items, index) => {
                 return (
@@ -97,7 +97,7 @@ const MoreDetails = ({ productInfo }) => {
                 );
               })}
             </div>
-            <div className="col-span-1">
+            <div className=" col-span-2 sm:col-span-1  ">
               <p className="md_600 text-gray_900 mb-4">Shipping Information</p>
               <div className="flex flex-col gap-y-3">
                 {shippingInformation.map((items, index) => {
@@ -233,9 +233,11 @@ const MoreDetails = ({ productInfo }) => {
             {productInfo?.reviews?.map((items, index) => {
               return (
                 <div className="border border-gray_100 rounded-lg p-4 flex flex-col gap-3 bg-gray_00">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-wrap items-start  justify-between gap-4">
                     <div>
-                      <h4 className="md_600 text-gray_900">{items.reviewerName}</h4>
+                      <h4 className="md_600 text-gray_900">
+                        {items.reviewerName}
+                      </h4>
                       <p className="sm_400 text-gray_500">
                         {items.reviewerEmail}
                       </p>
@@ -246,9 +248,7 @@ const MoreDetails = ({ productInfo }) => {
                     </div>
                   </div>
 
-                  <p className="md_400 text-gray_700 italic">
-                    {items.comment}
-                  </p>
+                  <p className="md_400 text-gray_700 italic">{items.comment}</p>
 
                   <p className="xs_400 text-gray_400">{items.date}</p>
                 </div>
