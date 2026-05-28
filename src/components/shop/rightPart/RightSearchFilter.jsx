@@ -65,12 +65,12 @@ const RightSideFilter = ({ onSort, sortValue }) => {
       <div className="flex items-center gap-x-2 shrink-0">
         <p className="text-sm font-normal text-gray_900 whitespace-nowrap">Sort by:</p>
         <select
-          className="border border-gray_100 rounded px-2 py-2 text-sm text-gray_700 cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary_500"
+          className="border border-gray_100 rounded px-2 py-2 text-sm text-gray_700 cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary_500  w-[160px]"
           onChange={handleSort}
           value={sortValue}
         >
           {sortOptions.map((item, index) => (
-            <option value={item.value} className="text-sm text-gray_700" key={index}>
+            <option value={item.value} className="text-sm text-gray_700 " key={index}>
               {item.label}
             </option>
           ))}
