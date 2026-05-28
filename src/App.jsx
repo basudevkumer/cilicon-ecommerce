@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-
 //  lazy Imports
 const Home = lazy(() => import("@pages/Home"));
 const About = lazy(() => import("@pages/About"));

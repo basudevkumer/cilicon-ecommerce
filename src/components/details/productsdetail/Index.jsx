@@ -164,8 +164,8 @@ const ProductDetails = () => {
                     />
                   </figure>
                 </div>
-                <div className="flex flex-wrap gap-x-3 gap-y-2 py-4 sm:py-6">
-                  <div className="flex gap-x-4 sm:gap-x-6 lg:gap-x-[37px] border-[2px] border-gray_100 px-4 sm:px-5 items-center">
+                <div className="flex flex-wrap sm:flex-nowrap  gap-x-3 gap-y-2 py-4 sm:py-6">
+                  <div className="flex gap-x-4 sm:gap-x-6 md:gap-x-4 lg:gap-x-[25px] xl:gap-x-[37px] border-[2px] border-gray_100 px-4 sm:px-5 md:px-2 lg:px-5 items-center ">
                     <button
                       className="text-[30px]  text-gray_900 cursor-pointer"
                       onClick={() => handleDecrement(data.id)}
@@ -184,7 +184,7 @@ const ProductDetails = () => {
                   </div>
                   <Link to={"/shopping-card"}>
                     <button
-                      className="flex-1 sm:flex-none px-6 sm:px-[81px] bg-primary_500 whitespace-nowrap heading6 text-gray_00 flex items-center gap-x-3 cursor-pointer"
+                      className="flex-1 sm:flex-none px-6 sm:px-[81px] md:px-[16px]  lg:px-[50px] xl:px-[81px] bg-primary_500 whitespace-nowrap heading6 text-gray_00 flex items-center gap-x-3 cursor-pointer"
                       onClick={handleClicked}
                     >
                       Add to card
@@ -193,8 +193,7 @@ const ProductDetails = () => {
                       </span>
                     </button>
                   </Link>
-                  <button className="uppercase whitespace-nowrap text-xs sm:text-sm font-bold border-[2px] border-primary_500 text-primary_500 rounded px-4 sm:px-8 py-2 sm:py-3 cursor-pointer hover:bg-primary_50 transition-colors flex-1 sm:flex-none">
-                    {" "}
+                  <button className="uppercase whitespace-nowrap text-xs sm:text-sm font-bold border-[2px] border-primary_500 text-primary_500 rounded px-4 sm:px-8 md:px-3 lg:px-4  xl:px-8 py-2 sm:py-3 cursor-pointer hover:bg-primary_50 transition-colors  ">
                     Buy now
                   </button>
                 </div>
