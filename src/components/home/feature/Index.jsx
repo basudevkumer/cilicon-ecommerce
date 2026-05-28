@@ -20,13 +20,13 @@ const FeatureNav = () => {
           sm: 4-col single row
           Removed hardcoded pr-[80px] which caused overflow on mobile
         */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 border border-gray_100">
+        <div className="grid grid-cols-2 sm:grid-cols-4 border items-center  border-gray_100">
           {featureData.map((items) => (
             <div
               className="border-r border-gray_100 last:border-r-0 border-b sm:border-b-0 [&:nth-child(2)]:border-r-0 sm:[&:nth-child(2)]:border-r"
               key={items.id}
             >
-              <div className="flex items-center gap-x-3 p-3 sm:p-4 lg:p-[18px]">
+              <div className="flex items-center justify-center lg:justify-start  gap-x-3 p-3 sm:p-4 lg:p-[18px]">
                 <span className="text-2xl sm:text-3xl lg:text-[35px] shrink-0">{items.icons}</span>
                 <div className="min-w-0">
                   <p className="text-xs sm:text-sm font-semibold text-gray_900 truncate">{items.title}</p>
