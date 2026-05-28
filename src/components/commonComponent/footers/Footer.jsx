@@ -147,7 +147,8 @@ const Footer = () => {
            */}
           <div
             className="
-              grid grid-cols-1 gap-y-10
+              grid grid-cols-1  gap-y-10 
+              sm:grid-cols-2 sm:gap-y-13   sm:gap-x-6
               md:grid-cols-2 md:gap-x-6 md:gap-y-10
               lg:grid-cols-3 lg:gap-x-6
               xl:grid-cols-7 xl:gap-x-6 xl:gap-y-0
@@ -159,7 +160,7 @@ const Footer = () => {
             */}
             <section
               aria-label="Brand and contact information"
-              className="md:col-span-2 lg:col-span-1 xl:col-span-2"
+              className="md:col-span-1 lg:col-span-1 xl:col-span-2"
             >
               {/*
                * <figure> wraps the logo image for semantic correctness.
@@ -360,7 +361,7 @@ const Footer = () => {
             */}
             <section
               aria-label="Popular product tags"
-              className="md:col-span-2 lg:col-span-3 xl:col-span-2"
+              className="sm:col-span-2 lg:col-span-2 xl:col-span-2"
             >
               <h2 className="labe2 text-gray_00 mb-3 text-base font-medium">
                 Popular Tags
