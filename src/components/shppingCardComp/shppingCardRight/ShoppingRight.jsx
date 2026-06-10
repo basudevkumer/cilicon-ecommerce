@@ -15,17 +15,17 @@ const ShoppingRight = () => {
   const totalTax = useSelector((state) => state.allTax.value);
 
   useEffect(() => {
-    if (catchData.length) {
-      dispatch(subTotal(catchData));
-      dispatch(discount({ prouctArr: catchData }));
-      dispatch(tax(subTotalValue));
-    }
+    // ✅ if check সরিয়ে দিলাম
+    // cart empty হলেও dispatch হবে — তাহলে সব 0 হয়ে যাবে
+    dispatch(subTotal(catchData));
+    dispatch(discount({ prouctArr: catchData }));
   }, [dispatch, catchData]);
-  // if (catchData.length > 0) {
-  //   dispatch(subTotal(catchData));
-  //   dispatch(discount({ prouctArr: catchData }));
-  //   dispatch(tax(subTotalValue));
-  // }
+
+  // ✅ subTotalValue change হলে tax আলাদা update হবে
+  // এতে stale value এর সমস্যা থাকবে না
+  useEffect(() => {
+    dispatch(tax(subTotalValue));
+  }, [dispatch, subTotalValue]);
 
   return (
     <div>
@@ -52,26 +52,30 @@ const ShoppingRight = () => {
           </div>
         </div>
         <div className="w-full border-1 border-gray_100 my-4"></div>
-        <div className="flex justify-between  mb-6">
+        <div className="flex justify-between mb-6">
           <h3 className="md_400 text-gray_900">Total</h3>
           <h3 className="md_600 text-gray_900">
             ${(subTotalValue + totalTax).toFixed(2)}
           </h3>
         </div>
         <div>
-          <Link to={"/checkout"}>
+          <Link to={catchData.length > 0 ? "/checkout" : "#"}>
             <Button
               children={"Proceed to Checkout"}
-              className={" justify-center !bg-primary_500 !text-gray_00"}
+              disabled={catchData.length === 0}
+              className={`justify-center !bg-primary_500 !text-gray_00 ${
+                catchData.length === 0
+                  ? "opacity-50 cursor-not-allowed pointer-events-none"
+                  : ""
+              }`}
             />
           </Link>
         </div>
       </div>
       <div className="mt-6 border border-gray_100 rounded">
-        <h3 className="lg_500  text-gray_900 border-b border-gray_100 py-5 px-6">
+        <h3 className="lg_500 text-gray_900 border-b border-gray_100 py-5 px-6">
           Coupon Code
         </h3>
-
         <div className="p-6">
           <input
             type="email"

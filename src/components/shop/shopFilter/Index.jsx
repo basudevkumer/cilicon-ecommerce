@@ -79,9 +79,9 @@ const ShopProductFilter = () => {
   const filterPrice = useMemo(
     () =>
       searchFilteredData?.filter(
-        (p) => p.price >= priceRange[0] && p.price <= priceRange[1]
+        (p) => p.price >= priceRange[0] && p.price <= priceRange[1],
       ),
-    [searchFilteredData, priceRange]
+    [searchFilteredData, priceRange],
   );
 
   const availableBrand = useMemo(() => {
@@ -96,10 +96,8 @@ const ShopProductFilter = () => {
 
   const finalResults = useMemo(() => {
     let data = filterPrice;
-    if (brand.length > 0)
-      data = data?.filter((b) => brand.includes(b.brand));
-    if (pTags)
-      data = data?.filter((t) => t.tags?.includes(pTags));
+    if (brand.length > 0) data = data?.filter((b) => brand.includes(b.brand));
+    if (pTags) data = data?.filter((t) => t.tags?.includes(pTags));
     if (sortBy === "price-asc")
       data = [...(data || [])].sort((a, b) => a.price - b.price);
     if (sortBy === "price-desc")
@@ -143,8 +141,8 @@ const ShopProductFilter = () => {
     if (searchItems.trim()) {
       setBrand([]);
       setPTags("");
-      setSelectedData(null);       // ← category reset
-      setCatchActiveValue("");      // ← active filter label reset
+      setSelectedData(null); // ← category reset
+      setCatchActiveValue(""); // ← active filter label reset
     }
   }, [searchItems]);
 
@@ -217,7 +215,6 @@ const ShopProductFilter = () => {
       <div>
         <Container>
           <div className="pt-6 sm:pt-8 lg:pt-[40px] pb-10 sm:pb-14 lg:pb-[72px]">
-
             {/* ── Mobile: Filter toggle button ── */}
             <div className="flex items-center justify-between mb-4 lg:hidden">
               <h2 className="text-base sm:text-lg font-semibold text-gray_900">
@@ -228,8 +225,19 @@ const ShopProductFilter = () => {
                 className="flex items-center gap-x-2 px-4 py-2 rounded border border-gray_200 text-sm font-medium text-gray_700 hover:border-primary_500 hover:text-primary_500 transition-colors duration-200 cursor-pointer"
                 aria-label="Open filter sidebar"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h18M6 10h12M10 16h4" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 4h18M6 10h12M10 16h4"
+                  />
                 </svg>
                 Filter
               </button>
@@ -275,18 +283,17 @@ const ShopProductFilter = () => {
 
             {/* ── Main layout: sidebar + products ── */}
             <div className="flex flex-col lg:grid lg:grid-cols-5 gap-x-6">
-
               {/* ── Desktop Sidebar ── */}
-              <aside className="hidden lg:block lg:col-span-1" aria-label="Product filters">
+              <aside
+                className="hidden lg:block lg:col-span-1"
+                aria-label="Product filters"
+              >
                 <FilterSidebar />
               </aside>
 
               {/* ── Product area ── */}
               <div className="lg:col-span-4">
-                <RightSideFilter
-                  onSort={setSortBy}
-                  sortValue={sortBy}
-                />
+                <RightSideFilter onSort={setSortBy} sortValue={sortBy} />
                 <div className="pt-3 sm:pt-4">
                   <RightActiveFilter
                     activeValue={catchActiveValue}
@@ -299,7 +306,6 @@ const ShopProductFilter = () => {
                 </div>
               </div>
             </div>
-
           </div>
         </Container>
       </div>
