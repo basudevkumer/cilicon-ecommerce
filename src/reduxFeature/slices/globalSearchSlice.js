@@ -1,20 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const loadItemsFromLocalStorage = () => {
-  try {
-    const data = localStorage.getItem("globalSearchValue");
-
-    if (!data) return "";
-
-    return JSON.parse(data) || "";
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
-};
-
 const initialState = {
-  value: loadItemsFromLocalStorage(),
+  value: "",
 };
 
 export const globalSearchSlice = createSlice({
@@ -22,8 +9,7 @@ export const globalSearchSlice = createSlice({
   initialState,
   reducers: {
     globalSearch: (state, actions) => {
-        state.value = actions.payload;
-      localStorage.setItem("globalSearchValue", JSON.stringify(state.value));
+      state.value = actions.payload;
     },
   },
 });

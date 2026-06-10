@@ -4,7 +4,6 @@ import Container from "@/components/commonComponent/containers/Container";
 import FilterCategoryItems from "../leftPart/FilterCategoryItems";
 import {
   allCategoryList,
-  useCategory,
   useSingleCategoryProduct,
   useTotalItems,
 } from "@/hooks/useCategory";
@@ -34,7 +33,7 @@ const ShopProductFilter = () => {
   const [sortBy, setSortBy] = useState("");
   const [catchActiveValue, setCatchActiveValue] = useState("");
 
-  // ── NEW: mobile sidebar drawer state ────────────────────────────
+  // ── Mobile sidebar drawer state ──────────────────────────────────
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // ── Data fetching ────────────────────────────────────────────────
@@ -111,6 +110,8 @@ const ShopProductFilter = () => {
   }, [filterPrice, brand, pTags, sortBy]);
 
   // ── Side effects ─────────────────────────────────────────────────
+
+  // category change হলে বাকি সব filter reset
   useEffect(() => {
     setBrand([]);
     setPriceRange([0, 100000]);
@@ -137,10 +138,13 @@ const ShopProductFilter = () => {
     setPricePresetRange([0, 0]);
   }, [priceRange]);
 
+  // ✅ FIX: search করলে category সহ সব reset
   useEffect(() => {
     if (searchItems.trim()) {
       setBrand([]);
       setPTags("");
+      setSelectedData(null);       // ← category reset
+      setCatchActiveValue("");      // ← active filter label reset
     }
   }, [searchItems]);
 
@@ -153,10 +157,12 @@ const ShopProductFilter = () => {
     return () => document.removeEventListener("keydown", handleKey);
   }, []);
 
-  // ── Prevent body scroll when sidebar is open on mobile ──────────
+  // ── Prevent body scroll when sidebar open ───────────────────────
   useEffect(() => {
     document.body.style.overflow = isSidebarOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isSidebarOpen]);
 
   // ── Filter Sidebar content ───────────────────────────────────────
@@ -259,7 +265,6 @@ const ShopProductFilter = () => {
                 </button>
               </div>
               <FilterSidebar />
-              {/* Apply button at bottom */}
               <button
                 onClick={() => setIsSidebarOpen(false)}
                 className="mt-6 w-full py-3 bg-primary_500 text-white text-sm font-semibold rounded hover:bg-primary_600 transition-colors duration-200 cursor-pointer"
@@ -271,7 +276,7 @@ const ShopProductFilter = () => {
             {/* ── Main layout: sidebar + products ── */}
             <div className="flex flex-col lg:grid lg:grid-cols-5 gap-x-6">
 
-              {/* ── Desktop Sidebar (hidden on mobile) ── */}
+              {/* ── Desktop Sidebar ── */}
               <aside className="hidden lg:block lg:col-span-1" aria-label="Product filters">
                 <FilterSidebar />
               </aside>
