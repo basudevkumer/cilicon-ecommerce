@@ -16,6 +16,7 @@ import {
   storeCompareValue,
 } from "@/reduxFeature/slices/compareSlice";
 import { addWishItems } from "@/reduxFeature/slices/wishList";
+import PageSkeleton from "@/components/Skeleton/skeletonBestDealCard/PageSkeleton";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const ProductDetails = () => {
 
   //ispending
   if (isPending) {
-    return <div>Loading........</div>;
+    return <PageSkeleton />;
   }
 
   // get icon
